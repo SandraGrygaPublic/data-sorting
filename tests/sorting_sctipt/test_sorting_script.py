@@ -44,10 +44,7 @@ def test_if_data_are_sorted_correctly(test_data_dir, file_name):
 ])
 def test_if_chunks_are_created_correctly(test_data_dir, file_name, single_load_limit, expected_temporary_files_number):
     input_file_name = os.path.join(test_data_dir, file_name)
-    b = os.stat(input_file_name).st_size
     generated_chunks = list(get_data_chunk(input_file_name, single_load_limit))
-    for chunk in generated_chunks:
-        d = len(chunk)
     temporary_files_number = len(generated_chunks)
     assert temporary_files_number == expected_temporary_files_number
 
