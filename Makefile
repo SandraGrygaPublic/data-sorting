@@ -29,4 +29,4 @@ build_docker:
 
 test_code_in_docker: build_docker
 	@ echo " RUN DOCKER ================================================\n"
-	docker run --memory=$(DOCKER_RAM_MEMORY) --cpus=$(DOCKER_CPUS) sort_algorytm:0.0.0 $(TEST_FILE_SIZE_MB) $(CHANK_MAX_SIZE_MB)
+	docker run --memory=$(DOCKER_RAM_MEMORY) --cpus=$(DOCKER_CPUS) $(DOCKER_IMAGE_NAME) $(TEST_FILE_SIZE_MB) $(CHANK_MAX_SIZE_MB)
