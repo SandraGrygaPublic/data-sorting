@@ -2,7 +2,7 @@
 
 DOCKER_IMAGE_NAME='sort_algorytm:0.0.0'
 DOCKER_RAM_MEMORY='5m'
-CHANK_MAX_SIZE_MB='3'
+CHUNK_MAX_SIZE_MB='3'
 DOCKER_CPUS='4'
 TEST_FILE_SIZE_MB='10'
 SHARED_DATA_DIR_NAME='docker_shared_data'
@@ -29,4 +29,4 @@ build_docker:
 
 test_code_in_docker: build_docker
 	@ echo " RUN DOCKER ================================================\n"
-	docker run --memory=$(DOCKER_RAM_MEMORY) --cpus=$(DOCKER_CPUS) $(DOCKER_IMAGE_NAME) $(TEST_FILE_SIZE_MB) $(CHANK_MAX_SIZE_MB)
+	docker run --memory=$(DOCKER_RAM_MEMORY) --cpus=$(DOCKER_CPUS) $(DOCKER_IMAGE_NAME) $(TEST_FILE_SIZE_MB) $(CHUNK_MAX_SIZE_MB)
